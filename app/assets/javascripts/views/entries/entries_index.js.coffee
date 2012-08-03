@@ -16,9 +16,19 @@ class Raffler.Views.EntriesIndex extends Backbone.View
 
   createEntry: (event) ->
     event.preventDefault()
-    @collection.create name: $('#new_entry_name').val()
+    attributes = name: $('#new_entry_name').val()
+    @collection.create attributes,
+      wait: true
+      success: -> $('#new_entry')[0].reset()
+      error: @handleError
 
   appendEntry: (entry) ->
     view = new Raffler.Views.Entry(model: entry)
     $('#entries').append(view.render().el)
     $('#new_entry')[0].reset()
+
+  handleError: (entry, response) ->
+    if response.status == 422
+      errors = $.parseJSON(response.responseText).errors
+      for attribute, messages of errors
+          alert "#{attribute} #{message}" for message in messages
