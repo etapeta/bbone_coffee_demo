@@ -5,6 +5,9 @@ Raffler::Application.routes.draw do
   end
 
   root to: "main#index"
+  match "/raffler" => "main#raffler"
+
+  # match ':controller(/:action(/:id))(.:format)'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
