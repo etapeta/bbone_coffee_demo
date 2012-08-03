@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Entry.create(name: 'Kevin Durant')
+Entry.create(name: 'Chris Paul')
+Entry.create(name: 'Carmelo Anthony')
+Entry.create(name: 'LeBron James')
+Entry.create(name: 'Russell Westbrook')
+Entry.create(name: 'Anthony Davis')
+Entry.create(name: 'Tim Duncan')
+Entry.create(name: 'Manu Ginobili')
+Entry.create(name: 'James Harden')
+Entry.create(name: 'Kevin Love')
+Entry.create(name: 'Kobe Briant')
