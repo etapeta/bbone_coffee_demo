@@ -3,7 +3,9 @@ window.Raffler =
   Collections: {}
   Views: {}
   Routers: {}
-  init: -> alert 'Hello from Backbone!'
+  init: ->
+    new Raffler.Routers.Entries()
+    Backbone.history.start()
 
 $(document).ready ->
   Raffler.init()
