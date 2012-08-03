@@ -23,10 +23,9 @@ class Raffler.Views.EntriesIndex extends Backbone.View
       success: -> $('#new_entry')[0].reset()
       error: @handleError
 
-  appendEntry: (entry) ->
+  appendEntry: (entry) =>
     view = new Raffler.Views.Entry(model: entry)
-    $('#entries').append(view.render().el)
-    $('#new_entry')[0].reset()
+    @$('#entries').append(view.render().el)
 
   drawWinner: ->
     event.preventDefault()

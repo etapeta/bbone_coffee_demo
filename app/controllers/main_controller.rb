@@ -4,7 +4,6 @@ class MainController < ApplicationController
   end
 
   def raffler
-    render 'index'
   end
 
 end

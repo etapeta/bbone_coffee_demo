@@ -5,7 +5,8 @@ class Raffler.Routers.Entries extends Backbone.Router
 
   initialize: ->
     @collection = new Raffler.Collections.Entries();
-    @collection.fetch()
+    @collection.reset($('#container').data 'entries') # load data statically
+    # @collection.fetch()   # load data dynamically
 
   index: ->
     view = new Raffler.Views.EntriesIndex(collection: @collection)
